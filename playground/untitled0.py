@@ -1,0 +1,40 @@
+import networkx as nx
+from operator import itemgetter
+G=nx.Graph()
+#G=nx.read_pajek("C:\Goran\IGI_Multimedia\Twitter.net")
+G=nx.read_pajek("Twitter.net")
+#G=nx.read_adjlist("test.adjlist")
+print ("Info:")
+print (nx.info(G))
+print ("Degree histogram:")
+print (nx.degree_histogram(G))
+print ("Density :")
+print (nx.density(G))
+print ("Number of nodes :")
+print (G.number_of_nodes())
+print ("Number of edges :")
+print (G.number_of_edges())
+#print sorted(G.degree().values())
+dc= nx.degree_centrality(G)
+##print sorted(dc.items(), key=itemgetter(1), reverse=True)
+
+Sorted_degree = sorted(dc.items(), key=itemgetter(1), reverse=True)
+print ("Sorted degree :")
+print (Sorted_degree [0:5])
+
+bc= nx.betweenness_centrality(G)
+##print sorted(bc.items(), key=itemgetter(1), reverse=True)
+Sorted_betweenness = sorted(bc.items(), key=itemgetter(1), reverse=True)
+print ("Sorted betweenness :")
+print (Sorted_betweenness [0:5]) 
+
+
+#ev= nx.eigenvector_centrality(G)
+##print sorted(ev.items(), key=itemgetter(1), reverse=True)
+
+cc= nx.closeness_centrality(G)
+##print sorted(cc.items(), key=itemgetter(1), reverse=True)
+Sorted_closeness = sorted(cc.items(), key=itemgetter(1), reverse=True)
+print ("Sorted closeness :")
+print (Sorted_closeness [0:5])
+nx.draw(G)

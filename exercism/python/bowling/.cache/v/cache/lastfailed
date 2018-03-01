@@ -1,0 +1,4 @@
+{
+  "bowling_test.py::BowlingTests::test_bonus_aft_last_frame_strk_cnt_be_strk_if_first_is_not_strk": true,
+  "bowling_test.py::BowlingTests::test_consecutive_spares_each_get_a_one_roll_bonus": true
+}
